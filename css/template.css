@@ -1,104 +1,164 @@
-* {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef6fb;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    height: 100%;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9; 
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-#content {
-    width: 90%;
-    max-width: 800px;
-    background: #ffffff;
-    padding: 20px;
+.alertMsg, .successMsg {
+    font-size: inherit;
+    padding: 20px 10px;
+    position: fixed;
+    bottom: 5%;
+    left: 2%;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    height: auto;
+    display: none;
+    animation: showFromLeft 0.3s linear;
+    box-shadow: 0px 0 10px 0px rgba(0, 0, 0, 0.2);
 }
 
-router-view {
+.alertMsg {
+    color: red;
+    background-color: rgba(255, 228, 228, 0.75);
+    box-shadow: 0px 0 10px 0px rgba(205, 30, 11, 0.5);
+}
+
+.successMsg {
+    color: green;
+    background-color: rgba(218, 249, 223, 0.75);
+    box-shadow: 0px 0 10px 0px rgba(11, 205, 61, 0.5);
+}
+
+@keyframes showFromLeft {
+    0% { opacity: 0; margin-left: -100%; }
+    100% { opacity: 1; margin-left: 0; }
+}
+
+.flex {
+    display: flex;
+}
+
+#left-area {
+    order: 2;
+}
+
+#right-area {
+    order: 1;
+}
+
+#right-area img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
     display: block;
+}
+
+.w40 {
+    width: 40%;
+}
+
+.w60 {
+    width: 60%;
+}
+
+.header {
+    width: 100%;
+    height: 10%;
+    color: #fff;
+    background-color: #393939;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.logo {
+    order: 2;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo img {
+    margin-right: 10px;
+    padding: 5px 0;
+    object-fit: cover;
+}
+
+.al {
+    order: 1;
+}
+
+.al h1 {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 22px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+}
+
+form {
+    width: 55%;
+}
+
+.inner-form {
     padding: 20px;
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #222;
+.row {
+    margin-bottom: 15px;
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    color: #444;
-}
-
-h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.6rem;
-    color: #666;
-}
-
-p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1rem;
-}
-
-table th,
-table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-table th {
-    background-color: #f4f4f9;
+label {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
-    #content {
-        width: 95%;
-        padding: 15px;
-    }
+input[type="email"],
+input[type="password"] {
+    text-align: right;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
 
-    h1 {
-        font-size: 1.5rem;
-    }
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+    outline: none;
+}
 
-    h2 {
-        font-size: 1.25rem;
-    }
+.btn {
+    text-transform: uppercase;
+    width: 100%;
+    background-color: #01a262;
+    color: #fff;
+    padding: 16px 15px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 1s ease;
+}
 
-    p {
-        font-size: 0.9rem;
-    }
+.btn:hover {
+    background-color: #12987d;
 }
