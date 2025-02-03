@@ -1,5 +1,7 @@
 import { router } from './router.js';
+import { header } from './widgets/header.js';
 import { msg } from './widgets/msg.js';
+import { popup } from './widgets/popup.js';
 
 document.addEventListener('DOMContentLoaded', function(){
     const main = {
@@ -96,6 +98,8 @@ document.addEventListener('DOMContentLoaded', function(){
     };
 
     var app = Vue.createApp(main)
+    .component('Header',header)
+    .component('popup',popup)
     .component('msg',msg)
     .use(router)
     .mount('#content')
