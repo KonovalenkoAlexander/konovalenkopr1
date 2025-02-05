@@ -37,7 +37,7 @@ export const popup = {
                     <div class="w80 ptb20">
                         <div class="head-title">{{title}}</div>
                     </div>
-                    <div class="w20 al ptb20 left-wc">
+                    <div class="w20 ptb20 left-wc">
                         <a href="#" @click.prevent="active=0"><i class="fas fa-window-close"></i></a>
                     </div>
                 </div>
