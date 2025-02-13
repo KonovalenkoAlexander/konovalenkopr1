@@ -251,7 +251,7 @@ export const campaign = {
                     
                 </div>
             </div>
-
+          </div>
             <popup ref="chart" fullscreen="true" title="Chart">
                 <div class="flex pannel">
                     <div class="w30 ptb25">
